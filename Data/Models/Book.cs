@@ -1,4 +1,6 @@
-namespace library.Data
+using System;
+
+namespace library.Data.Models
 {
     public class Book
     {
@@ -7,8 +9,8 @@ namespace library.Data
         public string Auther { get; set; }
         public string Description { get; set; }
         public double Rate { get; set; }
-        public DateTime DateStart { get; set; }
-        public DateTime DateRead { get; set; }
+        public DateTime? DateStart { get; set; }
+        public DateTime? DateRead { get; set; }
         
         
     }

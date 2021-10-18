@@ -1,4 +1,7 @@
-namespace library.Data
+using library.Data.Models;
+using System.Collections.Generic;
+
+namespace library.Data.Services
 {
     public interface IBookService
     {

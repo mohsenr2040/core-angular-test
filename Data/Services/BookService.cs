@@ -1,3 +1,8 @@
+using library.Data.Models;
+using library.Data.Services;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace library.Data
 {
     public class BookService:IBookService
@@ -29,7 +34,7 @@ namespace library.Data
             if(oldBook != null)
             {
                 oldBook.Title = newBook.Title;
-                oldBook.Author = newBook.Author;
+                oldBook.Auther = newBook.Auther;
                 oldBook.Description = newBook.Description;
                 oldBook.Rate = newBook.Rate;
                 oldBook.DateStart = newBook.DateStart;
@@ -37,5 +42,11 @@ namespace library.Data
             }
         }
 
+        List<Book> IBookService.GetAllBooks()
+        {
+            return Data.Books.ToList();
+        }
+
+      
     }
 }

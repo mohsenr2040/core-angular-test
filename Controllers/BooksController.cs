@@ -1,7 +1,14 @@
-namespace library.controllers
+using System;
+using library.Data;
+using library.Data.Models;
+using library.Data.Services;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Mvc;
+
+namespace library.Controllers
 {
-    [Route("api/[controller]")]
-    public class BooksController:controllers
+    [Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
+    public class BooksController:Controller
     {
         
        private IBookService _bookService;
@@ -11,17 +18,17 @@ namespace library.controllers
        }
 
        [HttpPost("AddBook")]
-       public iactionresult AddBook([FromBody]Book book)
+       public IActionResult AddBook([FromBody]Book book)
        {
            _bookService.AddBook(book);
-           return OK("Added");
+           return Ok(book);
        }
 
         //Read all books
         [HttpGet("[action]")]
         public IActionResult GetBooks()
         {
-            var allBooks = _service.GetAllBooks();
+            var allBooks = _bookService.GetAllBooks();
             return Ok(allBooks);
         }
 
@@ -29,15 +36,15 @@ namespace library.controllers
         [HttpPut("UpdateBook/{id}")]
         public IActionResult UpdateBook(int id, [FromBody]Book book)
         {
-            _service.UpdateBook(id, book);
+            _bookService.UpdateBook(id, book);
             return Ok(book);
         }
 
-            //Delete a book
+        //Delete a book
         [HttpDelete("DeleteBook/{id}")]
         public IActionResult DeleteBook(int id)
         {
-            _service.DeleteBook(id);
+            _bookService.DeleteBook(id);
             return Ok();
         }
 
@@ -45,7 +52,7 @@ namespace library.controllers
         [HttpGet("SingleBook/{id}")]
         public IActionResult GetBookById(int id)
         {
-            var book = _service.GetBookById(id);
+            var book = _bookService.GetBookById(id);
             return Ok(book);
         }
 
