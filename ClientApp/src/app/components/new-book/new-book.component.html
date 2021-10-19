@@ -1,1 +1,35 @@
-<p>new-book works!</p>
+<div class="add-book">
+
+<form>
+    <div class="form-group">
+        <label for="title" class="required">Title</label>
+        <input type="text" class="form-control" id="title" placeholder="Book title">
+    </div>
+    <div class="form-group">
+        <label for="description" class="required">Description</label>
+        <input type="text" class="form-control" id="description" placeholder="description">
+    </div>
+    <div class="form-group">
+        <label for="author" class="required">Author</label>
+        <input type="text" class="form-control" id="author" placeholder="Book author">
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-xs-4 col-sm-4">
+            <div class="form-group">
+                <label for="datestart" class="required">Date Start</label>
+                <input type="text" class="form-control" id="author" placeholder="datestart">
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-4 col-sm-4">
+            <div class="form-group">
+                <label for="dateread" class="required">Date Read</label>
+                <input type="text" class="form-control" id="author" placeholder="date read">
+            </div>
+        </div>
+
+    </div>
+
+    <button class="btn btn-success" type="submit">Add</button>
+    <button class="btn btn-default" [routerLink]="['/books']">Cancel</button>
+</form>
+</div>

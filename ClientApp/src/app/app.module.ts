@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { HomeComponent } from './components/home/home.component';
 import { BooksComponent } from './components/books/books.component';
 import { DeleteBookComponent } from './components/delete-book/delete-book.component';
@@ -30,7 +30,12 @@ import { BookService } from './Services/book.service';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' }
+      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'books' , component: BooksComponent},
+      { path: 'delete-book/:id' , component: DeleteBookComponent},
+      { path: 'update-book/:id' , component: UpdateBookComponent},
+      { path: 'new-book' , component: NewBookComponent},
+      { path: 'show-book/:id' , component: ShowBookComponent},
     ])
   ],
   providers: [BookService],
