@@ -5,6 +5,6 @@ interface Book
     description:string;
     author:string;
     rate?:number;
-    datestart:Date;
-    dataread:Date
+    dateStart:Date;
+    dataRead:Date
 }

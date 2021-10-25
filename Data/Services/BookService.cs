@@ -34,7 +34,7 @@ namespace library.Data
             if(oldBook != null)
             {
                 oldBook.Title = newBook.Title;
-                oldBook.Auther = newBook.Auther;
+                oldBook.Author = newBook.Author;
                 oldBook.Description = newBook.Description;
                 oldBook.Rate = newBook.Rate;
                 oldBook.DateStart = newBook.DateStart;
